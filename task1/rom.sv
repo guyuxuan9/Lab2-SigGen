@@ -7,11 +7,11 @@ module rom #(
     output logic [DATA_WIDTH-1:0]  dout
 );
     
-logic [DATA_WIDTH-1:0] rom_array [2**ADDRESS_WIDTH-1:0];
+logic [DATA_WIDTH-1:0] rom_array [16'hFFFF:0];
 
 initial begin
         $display("Loading rom.");
-        $readmemh("sinerom.mem",rom_array);
+        $readmemh("triangle.mem",rom_array);
 end;
 
 always_ff @(posedge clk)
